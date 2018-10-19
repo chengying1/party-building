@@ -6,7 +6,7 @@
         首页
       </div>
     </router-link>
-    <router-link to="/newsList" class="item" :class="{active: $route.name === 'newsList'}">
+    <router-link :to="{path:'/newsList',query:{title:'消息早知道'}}" class="item" :class="{active: $route.name === 'newsList'}">
       <i class="iconfont icon-xiaoxi"></i>
       <div class="title">
         消息早知道

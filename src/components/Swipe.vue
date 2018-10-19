@@ -2,8 +2,10 @@
 <div class="swipe">
   <mt-swipe :auto="4000" >
     <mt-swipe-item v-for="(item,index) in row" :key="index">
+      <router-link :to="{path:'/newsListDetail', query:{id:item.url}}">
       <img :src="item.imgUrl">
       <p class="title">{{item.title}}</p>
+      </router-link>
     </mt-swipe-item>
   </mt-swipe>
 </div>
@@ -26,9 +28,9 @@
     methods:{
       getData(){
         this.$axios.get('/carousel/carouselList.do', {type:0}).then(res => {
-          console.log(res)
-          if(res.data.code == 1){
-            this.row = res.data.rows
+          // console.log(res)
+          if(res.code == 1){
+            this.row = res.rows
           }
         })
       }

@@ -2,7 +2,7 @@
   <div>
   <HeaderCommon></HeaderCommon>
     <div   v-for="(item, index) in rows" :key="index">
-      <router-link :to="{path: '/newsListDetail',query:{id:item.newsId}}" class="list">
+      <router-link :to="{path: '/newsListDetail',query:{id:item.newsId, title}}" class="list">
       <div class="list-left">
         <img src="..\..\static\img\iconfont_gonggaotongzhi.png" alt="">
       </div>
@@ -27,18 +27,20 @@
     name: "newsList",
     data(){
       return{
-        rows:[]
+        rows:[],
+        title:''
       }
     },
     methods:{
       getData(){
         this.$axios.get('/news/newsList.do',{page:1,rows:10,type:2}).then(res => {
           // console.log(res)
-          this.rows = res.data.rows
+          this.rows = res.rows
         })
       }
     },
     created(){
+      this.title = this.$route.query.title
       this.getData()
     }
   }

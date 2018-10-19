@@ -24,9 +24,9 @@
     methods:{
       getData(){
         this.$axios.get('/news/newsContent.do',{newsId:this.$route.query.id}).then(res => {
-          console.log(res)
-          this.title = res.data.data.title
-          this.content = res.data.data.content
+          // console.log(res)
+          this.title = res.data.title
+          this.content = res.data.content
         })
       }
     },

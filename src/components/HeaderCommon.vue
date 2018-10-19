@@ -2,10 +2,11 @@
   <div class="wrap">
   <div class="header">
     <div class="icon" @click="back" ></div>
-
-    <p v-show="this.$route.name === 'newsList'">通知早知道</p>
+    <p>{{this.$route.query.title}}</p>
     <p v-show="this.$route.name === 'personal'" >我的党建</p>
+    <p v-show="this.$route.name === 'newsList'" >消息早知道</p>
     <p v-show="this.$route.name === 'login'" >登录</p>
+    <!--<p v-show="this.$route.query.type === 0" >信工新闻眼</p>-->
   </div>
     <!--<div class="null">-->
       <!--&lt;!&ndash;lalalala&ndash;&gt;-->
@@ -29,7 +30,7 @@
   .wrap {
     .header {
       position: fixed;
-      /*<!--z-index: -1;-->*/
+      z-index: 9;
       top: 0;
       left: 0;
       right: 0;

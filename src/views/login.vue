@@ -5,16 +5,11 @@
     <div class="img">
       <img src="../../static/img/logo.png" alt="">
     </div>
-    <!--<div class="login-from" >-->
-      <!--<mt-field  placeholder="身份证号" type="number" v-model="number"></mt-field>-->
-      <!--<mt-field  placeholder="密码" type="password" v-model="password"></mt-field>-->
-      <!--<mt-button type="primary">primary</mt-button>-->
-    <!--</div>-->
-    <from class="login-from">
-      <input placeholder="身份证号" type="number" v-model="number">
-      <input placeholder="密码" type="password" v-model="password">
-      <input class="button" type="button" value="登录" style="color: white">
-    </from>
+    <form class="login-from">
+      <input placeholder="身份证号" type="number" v-model="formData.number" style="color: white">
+      <input placeholder="密码" type="password" v-model="formData.password" style="color: white">
+      <input class="button" type="button" value="登录" style="color: white" @click="handlelogin">
+    </form>
   </div>
 
   </div>
@@ -24,7 +19,31 @@
   import HeaderCommon from '@/components/HeaderCommon'
   export default {
     components:{HeaderCommon},
-    name: "login"
+    name: "login",
+    data(){
+      return{
+        formData:{
+          number:'1001',
+          password:'123456',
+        }
+      }
+    },
+    methods:{
+      handlelogin(){
+        var formData = new FormData()
+        formData.append('id_card', this.formData.number)
+        formData.append('password', this.formData.password)
+
+        this.$axios.post('/user/userLogin.do', formData).then(res => {
+
+          this.$store.commit('CHANGE_userInfo', res.data)
+          this.$store.commit('CHANGE_token', res.token)
+          // console.log(res)
+          this.$router.push('/personal')
+        })
+      }
+    }
+
   }
 </script>
 

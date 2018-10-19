@@ -6,32 +6,32 @@
     </div>
 <div class="table">
   <div class="table-row">
-    <a href="" class="table-cell a">
+    <router-link :to="{path:'/newsListCommon', query:{type:0,title:'信工新闻眼'}}" class="table-cell a">
       <img src="/static/img/icon_01.png" alt="">
         <span>信工新闻眼</span>
-    </a>
-    <a href="" class="table-cell a">
+    </router-link>
+    <router-link :to="{path:'/zzsh', query:{title:'掌上组织生活'}}" class="table-cell a">
       <img src="/static/img/icon_02.png" alt="">
       <span>掌上组织生活</span>
-    </a>
-    <a href="" class="table-cell a">
+      </router-link>
+    <router-link to="/test" class="table-cell a">
       <img src="/static/img/icon_03.png" alt="">
       <span>党员云互动</span>
-    </a>
+      </router-link>
   </div>
   <div class="table-row">
-    <a href="" class="table-cell a">
+    <router-link :to="{path:'/newsListCommon', query:{type:3,title:'党建一点通'}}" class="table-cell a">
       <img src="/static/img/icon_04.png" alt="">
       <span>党建一点通</span>
-    </a>
-    <a href="" class="table-cell a">
+      </router-link>
+    <router-link :to="{path:'/newsListCommon', query:{type:5,title:'党员亮身份'}}" class="table-cell a">
       <img src="/static/img/icon_05.png" alt="">
       <span>党员亮身份</span>
-    </a>
-    <a href="" class="table-cell a">
+      </router-link>
+    <router-link :to="{path:'/dsnow', query:{title:'党史上的今天'}}" class="table-cell a">
       <img src="/static/img/icon_06.png" alt="">
       <span>党史上的今天</span>
-    </a>
+      </router-link>
   </div>
 </div>
 <div class="section-img">
@@ -43,12 +43,12 @@
       </div>
       <div class="foot-right">
         <div class="row">
-          <router-link to="/"></router-link>
-          <router-link to="/"></router-link>
+          <router-link :to="{path:'/newsListCommon', query:{type:6,title:'随时随地学'}}"></router-link>
+          <router-link :to="{path:'/newsListCommon', query:{type:7,title:'随时随地拍'}}"></router-link>
         </div>
         <div class="row">
-          <router-link to="/"></router-link>
-          <router-link to="/"></router-link>
+          <router-link :to="{path:'/newsListCommon', query:{type:4,title:'制度建设'}}"></router-link>
+          <router-link :to="{path:'/newsListCommon', query:{type:1,title:'特色活动'}}"></router-link>
         </div>
       </div>
     </div>

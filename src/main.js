@@ -13,7 +13,10 @@ import { Cell } from 'mint-ui';
 import { Header } from 'mint-ui';
 import { Field } from 'mint-ui';
 import { Button } from 'mint-ui';
+import { Loadmore } from 'mint-ui';
+import store from './store/index'
 
+Vue.component(Loadmore.name, Loadmore);
 Vue.component(Button.name, Button);
 Vue.component(Field.name, Field);
 Vue.component(Header.name, Header);
@@ -22,10 +25,12 @@ Vue.component(Cell.name, Cell);
 Vue.prototype.$axios = $axios
 Vue.config.productionTip = false
 
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
