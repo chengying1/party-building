@@ -20,17 +20,17 @@
     <mt-cell title="个人信息" is-link   :to="{path:'/people', query:{title:'个人信息'}}" class="cell">
       <img slot="icon" src="../../static/img/icon_01.png" width="32" height="32">
     </mt-cell>
-    <mt-cell title="个人量化积分" is-link  to="/" class="cell">
+    <mt-cell title="个人量化积分" is-link  :to="{path:'/integral', query:{title:'个人量化积分'}}" class="cell">
       <img slot="icon" src="../../static/img/icon_02.png" width="32" height="32">
     </mt-cell>
     <mt-cell title="修改密码" is-link  to="/" class="cell">
       <img slot="icon"  src="../../static/img/xgmm.png" width="32" height="32">
     </mt-cell>
-    <mt-cell title="党费缴纳" is-link  to="/" class="cell">
+    <mt-cell title="党费缴纳" is-link  :to="{path:'/pay', query:{title:'党费缴纳'}}" class="cell">
       <img slot="icon" src="../../static/img/icon_04.png" width="32" height="32">
     </mt-cell>
     </div>
-    <div class="logout">
+    <div class="logout" v-show="$store.state.userInfo.username">
       <input type="button" value="退出登录">
     </div>
 

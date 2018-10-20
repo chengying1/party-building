@@ -14,7 +14,7 @@
       <img src="/static/img/icon_02.png" alt="">
       <span>掌上组织生活</span>
       </router-link>
-    <router-link to="/test" class="table-cell a">
+    <router-link :to="{path:'/liuyan', query:{title:'党员云互动'}}" class="table-cell a">
       <img src="/static/img/icon_03.png" alt="">
       <span>党员云互动</span>
       </router-link>

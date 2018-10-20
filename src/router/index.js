@@ -60,5 +60,25 @@ export default new Router({
       name: 'people',
       component: () => import('@/views/people')
     },
+    {
+      path: '/pay',
+      name: 'pay',
+      component: () => import('@/views/pay')
+    },
+    {
+      path: '/integral',
+      name: 'integral',
+      component: () => import('@/views/integral')
+    },
+    {
+      path: '/integralDateil',
+      name: 'integralDateil',
+      component: () => import('@/views/integralDateil')
+    },
+    {
+      path: '/liuyan',
+      name: 'liuyan',
+      component: () => import('@/views/liuyan')
+    },
   ]
 })
